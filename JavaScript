@@ -1,0 +1,38 @@
+let chart;
+
+async function predict() {
+    const year = document.getElementById("yearInput").value;
+    if (!year) {
+        alert("Please enter a year");
+        return;
+    }
+
+    const response = await fetch(`http://127.0.0.1:5000/predict?year=${year}`);
+    const data = await response.json();
+
+    document.getElementById("result").innerText =
+        `Predicted Temperature: ${data.predicted_temperature} °C | Risk: ${data.risk_level}`;
+
+    drawChart(year, data.predicted_temperature);
+}
+
+function drawChart(year, temperature) {
+    const ctx = document.getElementById("chart").getContext("2d");
+
+    if (chart) {
+        chart.destroy();
+    }
+
+    chart = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: ["2020", year.toString()],
+            datasets: [{
+                label: "Temperature (°C)",
+                data: [15.2, temperature],
+                fill: false,
+                tension: 0.3
+            }]
+        }
+    });
+}
