@@ -1,0 +1,9 @@
+envirocast-risk-ai/
+├── app.py
+├── data/
+│   └── temperature_data.csv
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── README.md
