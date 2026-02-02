@@ -5,8 +5,8 @@ from sklearn.linear_model import LinearRegression
 
 
 data = {
-    "year": [2000, 2005, 2010, 2015, 2020],
-    "temperature": [14.1, 14.3, 14.6, 14.9, 15.2]
+    "year": [2021,2022,2023 ],
+    "temperature": [14.2,15.1,16.0,17.3]
 }
 
 df = pd.DataFrame(data)
