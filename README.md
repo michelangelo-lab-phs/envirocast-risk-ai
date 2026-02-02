@@ -31,3 +31,19 @@ Installation
 ```bash
 pip install -r requirements.txt
 python app.py
+# EnviroCast Risk AI
+
+AI-powered climate risk prediction tool using real historical weather data.
+
+## Tech Stack
+- Python
+- Flask
+- Pandas
+- Open-Meteo API
+
+## How to run
+```bash
+git clone https://github.com/...
+cd project
+pip install -r requirements.txt
+python app.py
